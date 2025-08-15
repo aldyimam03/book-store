@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('book_id')->constrained()->cascadeOnDelete();
             $table->integer('score');
-            $table->index(['book_id', 'score']);
+            
+            $table->index(['book_id', 'score'], 'idx_ratings_book_score');
+            
             $table->timestamps();
         });
     }
