@@ -60,7 +60,7 @@
                 <label for="score" class="block font-medium">Rating</label>
                 <select name="score" id="score" class="border rounded w-full px-3 py-2" required>
                     <option value="">-- Pilih Rating --</option>
-                    @for ($i = 0; $i <= 10; $i++)
+                    @for ($i = 1; $i <= 10; $i++)
                         <option value="{{ $i }}" {{ old('score') === (string) $i ? 'selected' : '' }}>
                             {{ $i }}
                         </option>
