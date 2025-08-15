@@ -32,7 +32,10 @@ npm install
 
 # 3. Copy file .env dan set konfigurasi database
 cp .env.example .env
-# lalu edit file .env sesuai database 
+# lalu edit file .env sesuai database
+# DB_CONNECTION=mysql
+# DB_HOST=127.0.0.1
+# DB_PORT=3306
 # DB_DATABASE=nama_db
 # DB_USERNAME=root
 # DB_PASSWORD=
