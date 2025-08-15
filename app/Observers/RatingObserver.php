@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Models\Book;
+use App\Models\Author;
 use App\Models\Rating;
 
 class RatingObserver
@@ -66,7 +67,7 @@ class RatingObserver
 
     private function updateBookStats(int $bookId): void
     {
-        $book = \App\Models\Book::find($bookId);
+        $book = Book::find($bookId);
         if ($book) {
             $book->updateRatingStats();
         }
@@ -74,7 +75,7 @@ class RatingObserver
 
     private function updateAuthorStats(int $authorId): void
     {
-        $author = \App\Models\Author::find($authorId);
+        $author = Author::find($authorId);
         if ($author) {
             $author->updateRatingStats();
         }
