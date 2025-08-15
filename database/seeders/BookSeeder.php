@@ -22,19 +22,22 @@ class BookSeeder extends Seeder
         $totalCategory = count($categoryIds);
 
         $totalFakeBooks = 100000;
-        $chunk = 5000;
+        $chunk = 5000; 
+
+        echo "Seeding {$totalFakeBooks} books in batches of {$chunk}...\n";
 
         for ($i = 0; $i < $totalFakeBooks; $i += $chunk) {
             $batch = [];
             for ($j = 0; $j < $chunk && ($i + $j) < $totalFakeBooks; $j++) {
                 $batch[] = [
-                    'title'       => fake()->sentence(3),
+                    'title'       => fake()->sentence(rand(2, 5)), 
                     'author_id'   => $authorIds[random_int(0, $totalAuthor - 1)],
                     'category_id' => $categoryIds[random_int(0, $totalCategory - 1)],
                     'created_at'  => now(),
                     'updated_at'  => now(),
                 ];
             }
+
             DB::table('books')->insert($batch);
         }
     }
