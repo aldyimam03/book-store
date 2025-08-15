@@ -44,7 +44,7 @@ class BookRepositories implements BookInterface
 
             ->orderByRaw('(SELECT ROUND(COALESCE(AVG(ratings.score), 0), 2) FROM ratings WHERE ratings.book_id = books.id) DESC')
             ->orderByRaw('(SELECT COUNT(ratings.id) FROM ratings WHERE ratings.book_id = books.id) DESC')
-            ->orderBy('books.title');
+            ->orderBy('books.title'); 
 
         return $q->paginate($perPage <= 0 ? 10 : $perPage);
     }

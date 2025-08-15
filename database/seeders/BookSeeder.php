@@ -24,8 +24,6 @@ class BookSeeder extends Seeder
         $totalFakeBooks = 100000;
         $chunk = 5000; 
 
-        echo "Seeding {$totalFakeBooks} books in batches of {$chunk}...\n";
-
         for ($i = 0; $i < $totalFakeBooks; $i += $chunk) {
             $batch = [];
             for ($j = 0; $j < $chunk && ($i + $j) < $totalFakeBooks; $j++) {
